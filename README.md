@@ -115,44 +115,44 @@ src
 
 ## 4. Screenshots
 
-### Loading:-
-
+### Loading
+-
     ![0](https://github.com/mayank-singh-care/Plane_Meals-Assignment/assets/31184015/bb68028a-95ed-4e7a-8bb4-8b5500c907f1)
 
-### Main Page:-
-
+### Main Page
+-
     ![1](https://github.com/mayank-singh-care/Plane_Meals-Assignment/assets/31184015/f459ccc8-c9fc-46ec-a2b7-d33dad1f7aed)
 
-### Pagination:- 
-
+### Pagination
+-
     ![2](https://github.com/mayank-singh-care/Plane_Meals-Assignment/assets/31184015/5aa7164c-40c7-4931-b088-31ad5c275bfa)
 
-### Firebase Gmail Login:-
-
+### Firebase Gmail Login
+-
     ![3](https://github.com/mayank-singh-care/Plane_Meals-Assignment/assets/31184015/6e5dc7dc-ada4-4003-a438-d217947739db)
 
-### Meals & Drinks Selected according to Passengers:-
-
+### Meals & Drinks Selected according to Passengers
+-
     ![4](https://github.com/mayank-singh-care/Plane_Meals-Assignment/assets/31184015/439e11dc-f03d-4f2b-b6ba-358601e9e5ee)
 
-### Cart & Logout button:-
-
+### Cart & Logout button
+-
     ![5](https://github.com/mayank-singh-care/Plane_Meals-Assignment/assets/31184015/5c18f72a-1633-4908-a1da-f010771aca22)
 
-### Filter Meals:-
-
+### Filter Meals
+-
     ![6](https://github.com/mayank-singh-care/Plane_Meals-Assignment/assets/31184015/ed5ed608-97ca-4b27-bce1-32f07bc8d83b)
 
-### Cart:-
-
+### Cart
+-
     ![7](https://github.com/mayank-singh-care/Plane_Meals-Assignment/assets/31184015/0932b26e-7803-492a-8052-47cee1ba49c3)
 
-### Local Storage:-
-
+### Local Storage
+-
     ![9](https://github.com/mayank-singh-care/Plane_Meals-Assignment/assets/31184015/7fed79ba-0129-4159-9627-058441e46803)
 
-### Responsive:-
-
+### Responsive
+-
     ![10](https://github.com/mayank-singh-care/Plane_Meals-Assignment/assets/31184015/0112644d-2f68-4200-96f5-9affaf9b4910)
     ![11](https://github.com/mayank-singh-care/Plane_Meals-Assignment/assets/31184015/4cc39bff-af2b-426c-91a4-e7d21805c8bf)
 
