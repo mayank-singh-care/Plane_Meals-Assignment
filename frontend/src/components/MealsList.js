@@ -9,7 +9,6 @@ function MealsList({ filters }) {
   const [page, setPage] = useState(1);
   const url = `http://localhost:8080/meals?page=${page}&limit=3&tag=${filters}`;
   const { data, loading } = useFetch(url);
-  console.log(data);
   const [mealsList, setMealsList] = useState(data?.results || []);
 
   useEffect(() => {

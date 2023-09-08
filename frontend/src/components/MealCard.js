@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import "./Meal.css";
 import { useSelector, useDispatch } from "react-redux";
@@ -12,6 +12,7 @@ const drinkImgs = [redVine, orangeJuice, greenBeer];
 function MealCard({ meal }) {
   const { cartItems, selectedPassenger } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  const [mealSelected, setMealSelected] = useState({});
 
   const isDrinkActive = (mealId, drinkId) => {
     let mealObj = cartItems[selectedPassenger].find(
@@ -23,7 +24,7 @@ function MealCard({ meal }) {
     }
     return false;
   };
-
+  
   return (
     <div key={meal.id} className="meal">
       <img src={meal.img} alt="MealImg" className="mealImg" />
@@ -53,11 +54,12 @@ function MealCard({ meal }) {
             {meal.drinks.map((drink, i) => (
               <button
                 key={drink.id}
-                // disabled={!isDrinkActive(meal.id, drink.id)}
+                disabled={!mealSelected[selectedPassenger]}
+                title={
+                  !mealSelected[selectedPassenger] ? "please select a meal" : ""
+                }
                 className={`drink ${
-                  isDrinkActive(meal.id, drink.id)
-                    ? "activeDrink"
-                    : "unactiveDrink"
+                  isDrinkActive(meal.id, drink.id) && "activeDrink"
                 }`}
                 onClick={() => {
                   dispatch(
@@ -95,6 +97,10 @@ function MealCard({ meal }) {
                     },
                   })
                 );
+                setMealSelected((prev) => ({
+                  ...prev,
+                  [selectedPassenger]: meal.id,
+                }));
               }}>
               Select
             </Button>

@@ -36,7 +36,7 @@ function Cart() {
               Clear cart
             </Button>
             <h1>Cart</h1>
-            <CloseIcon onClick={toggleDrawer} />
+            <CloseIcon onClick={toggleDrawer} style={{ cursor: "pointer" }} />
           </div>
           <List>
             {Object.entries(cartItems).map(([passenger, meals]) => {

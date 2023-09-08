@@ -1,11 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  cartItems: { "Adult Passenger 1": [], "Adult Passenger 2": [] }, // cartItems with respect to Passengers
-  cartTotal: 0,
+  cartItems: JSON.parse(localStorage.getItem("cartItems")) || {
+    "Adult Passenger 1": [],
+    "Adult Passenger 2": [],
+  }, // cartItems with respect to Passengers
+  cartTotal: +localStorage.getItem("cartTotal") || 0,
   isCartOpen: false,
-  selectedPassenger: "Adult Passenger 1",
+  selectedPassenger:
+    localStorage.getItem("selectedPassenger") || "Adult Passenger 1",
 };
+
+function setToLocalStorage(state) {
+  localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+  localStorage.setItem("cartTotal", state.cartTotal);
+  localStorage.setItem("selectedPassenger", state.selectedPassenger);
+}
 
 export const cartSlice = createSlice({
   name: "cartItems",
@@ -14,6 +24,7 @@ export const cartSlice = createSlice({
     clearCart: (state) => {
       state.cartItems = { "Adult Passenger 1": [], "Adult Passenger 2": [] };
       state.cartTotal = 0;
+      setToLocalStorage(state);
     },
     toggleCart: (state) => {
       state.isCartOpen = !state.isCartOpen;
@@ -29,6 +40,7 @@ export const cartSlice = createSlice({
         state.cartItems[action.payload.passenger].push(action.payload.meal);
       }
       state.cartTotal += action.payload.meal.price;
+      setToLocalStorage(state);
     },
     deleteMeals: (state, action) => {
       let mealObj = state.cartItems[action.payload.passenger].find(
@@ -38,13 +50,14 @@ export const cartSlice = createSlice({
       state.cartItems[action.payload.passenger] = state.cartItems[
         action.payload.passenger
       ].filter((meal) => meal.id !== action.payload.mealId);
+      setToLocalStorage(state);
     },
     toggleDrinks: (state, action) => {
       // Drinks - for particular Meal of particular Passenger
       let mealObj = state.cartItems[action.payload.passenger].find(
         (meal) => meal.id === action.payload.mealId
       );
-      console.log(action.payload.drink);
+
       let drinkObj = mealObj.drinks.find(
         (drink) => drink.id === action.payload.drink.id
       );
@@ -58,18 +71,20 @@ export const cartSlice = createSlice({
         mealObj.drinks.push(action.payload.drink);
         state.cartTotal += action.payload.drink.price;
       }
+      setToLocalStorage(state);
     },
     changeMealQty: (state, action) => {
-      console.log(action.payload);
       let meal = state.cartItems[action.payload.passenger].find(
         (meal) => meal.id === action.payload.mealId
       );
       let qty = meal.quantity;
       meal.quantity = action.payload.mealQty;
       state.cartTotal += (action.payload.mealQty - qty) * meal.price;
+      setToLocalStorage(state);
     },
     changePassenger: (state, action) => {
       state.selectedPassenger = action.payload.name;
+      setToLocalStorage(state);
     },
   },
 });

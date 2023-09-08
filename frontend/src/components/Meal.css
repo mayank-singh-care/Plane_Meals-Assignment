@@ -53,14 +53,9 @@ p{
     border:2px solid red;
 }
 
-.unactiveDrink {
-    pointer-events: none;
+.drink:disabled{
     cursor: not-allowed;
 }
-
-/* .drink:disabled{
-    cursor: not-allowed;
-} */
 
 
 @media screen and (max-width: 500px) {
