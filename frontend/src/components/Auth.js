@@ -37,7 +37,8 @@ function Auth() {
       .then(() => {
         console.log("Signed out successfully");
         seUserPhoto(null);
-        localStorage.removeItem("user");
+        // localStorage.removeItem("user");
+        localStorage.clear();
       })
       .catch((error) => {});
   };
