@@ -7,7 +7,7 @@ import "./Meal.css";
 
 function MealsList({ filters }) {
   const [page, setPage] = useState(1);
-  const url = `http://localhost:8080/meals?page=${page}&limit=3&tag=${filters}`;
+  const url = `https://plane-meals-backend.onrender.com/meals?page=${page}&limit=3&tag=${filters}`;
   const { data, loading } = useFetch(url);
   const [mealsList, setMealsList] = useState(data?.results || []);
 
