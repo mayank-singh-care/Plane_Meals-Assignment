@@ -4,7 +4,7 @@ import Chip from "@mui/material/Chip";
 import useFetch from "../utils/useFetch";
 
 function FilterTags({ filters, setFilters }) {
-  const url = "http://localhost:8080/labels";
+  const url = "https://plane-meals-backend.onrender.com/labels";
   const { data, loading } = useFetch(url);
 
   const handleSelect = (tagId) => {
