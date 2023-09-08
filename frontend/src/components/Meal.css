@@ -1,0 +1,70 @@
+.meal{
+    display: flex;
+    border-bottom: 1px solid black;
+    align-items: center;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 90%;
+    margin: 0 auto;
+    gap:20px;
+    padding: 20px;
+}
+
+.mealImg{
+    height:200px;
+    width:200px;
+    border-radius: 10px;
+}
+
+.mealDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.drinks{
+    display: flex;
+    gap: 10px;
+    flex-wrap:wrap ;
+}
+
+.drink{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: white;
+}
+
+.mealTitle{
+    margin: 5px 0;
+}
+
+p{
+    margin: 0;
+}
+
+.pagination{
+    width: 30%;
+    margin: 20px auto;
+}
+
+.activeDrink{
+    border:2px solid red;
+}
+
+.unactiveDrink {
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+/* .drink:disabled{
+    cursor: not-allowed;
+} */
+
+
+@media screen and (max-width: 500px) {
+    .meal {
+        flex-wrap: wrap;
+    }
+}

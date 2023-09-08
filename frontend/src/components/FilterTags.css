@@ -1,0 +1,14 @@
+.filters{
+    border-bottom: 1px solid black;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+    align-items: center;
+    padding: 20px;
+}
+
+.tag{
+    border: 1px solid black;
+    border-radius: 10px;
+}
